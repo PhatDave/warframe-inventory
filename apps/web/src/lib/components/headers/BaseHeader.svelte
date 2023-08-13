@@ -11,10 +11,10 @@
     <nav>
         <ul class="flex gap-x-8 text-3xl font-bold [&_a:hover]:text-primary [&_a]:transition-colors">
             <li>
-                <a href="/route1"> Route1 </a>
+                <a href="/"> Warframes </a>
             </li>
             <li>
-                <a href="/route2"> Route2 </a>
+                <a href="/items"> Items </a>
             </li>
         </ul>
     </nav>

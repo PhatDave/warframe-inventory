@@ -1,8 +1,19 @@
 <script lang="ts">
-  import BackdropContainer from '$lib/components/containers/BackdropContainer.svelte';
+    import WarframeComp from "$components/WarframeComp.svelte";
+    import type {Warframe} from "$types";
+    import {onMount} from "svelte";
+    import {getWarframes} from "../api/warframeApi";
+
+    let frames: Warframe[] = [];
+    onMount(async () => {
+        frames = await getWarframes();
+	});
 </script>
 
-<div class="form-control flex-1 items-center justify-center">
-  <BackdropContainer>
-  </BackdropContainer>
-</div>
+<template>
+	<div class="grid grid-cols-2">
+		{#each frames as frame}
+			<WarframeComp frame="{frame}" />
+		{/each}
+	</div>
+</template>
