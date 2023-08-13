@@ -13,5 +13,11 @@ export const POST_OPTIONS = {
 }
 
 export const API_URL = "https://pocketbase-warframe-inventory.site.quack-lab.dev/api";
-export const API_WARFRAMES_URL = `${API_URL}/collections/warframes/records`;
-export const API_WARFRAMES_DEFAULT_FIELDS = "?fields=id,name,has_bp,has_chassis,has_neuroptics,has_systems,is_built&sort=+name";
+export const API_ITEMS_URL = `${API_URL}/collections/item/records`;
+export const API_ITEMS_DEFAULT_FILTER = "?fields=id,name,built&sort=+name&perPage=1000";
+
+export const API_WARFRAMES_FILTER = "&filter=(type='Warframe')";
+export const API_WEAPONS_FILTER = "&filter=(type='Weapon')";
+
+export const API_PARTS_URL = `${API_URL}/collections/part/records`;
+export const API_PARTS_DEFAULT_FILTER = "?fields=id,name,item,owned&sort=+name&perPage=1000&filter=(item='$ITEMID')";
