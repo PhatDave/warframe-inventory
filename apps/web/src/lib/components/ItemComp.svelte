@@ -12,19 +12,17 @@
 
     onMount(async () => {
         let stateParts = get(partsStore).get(item.name);
-        if (!stateParts || stateParts.length === 0) {
+        if (stateParts == undefined || stateParts.length === 0) {
             const apiParts = await getParts(item);
             partsStore.update((store) => store.set(item.name, apiParts));
         }
         parts = get(partsStore).get(item.name);
     });
 
-    $: {
-        console.log(`Parts for frame ${item.name} are ${JSON.stringify(parts)}`);
-    }
-
-    function resolveImageName(warframe: string): string {
-        return `/items/${warframe.replace(" ", "")}.png.webp`;
+    function resolveImageName(item: string): string {
+        let query = item.replaceAll(" ", "")
+        query = query.replaceAll("&", "");
+        return `/items/${query}.png.webp`;
     }
 
     function doBuild(event: Event) {
