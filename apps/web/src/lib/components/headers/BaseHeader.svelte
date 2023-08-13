@@ -1,5 +1,6 @@
 <script lang="ts">
     import ThemeToggle from '$components/theme/ThemeToggle.svelte';
+    import {theme} from "$stores/theme";
     import {faXmark} from '@fortawesome/free-solid-svg-icons';
     import {exit} from '@tauri-apps/api/process';
     import Fa from 'svelte-fa';

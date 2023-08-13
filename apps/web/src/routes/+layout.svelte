@@ -20,8 +20,8 @@
 <svelte:head>
 </svelte:head>
 
-<div class="form-control min-h-screen bg-fixed heropattern-topography-black/10 dark:heropattern-topography-white/10">
-	<div class="sticky top-0 z-50 bg-black">
+<div class="form-control min-h-screen bg-fixed">
+	<div class="sticky top-0 z-99 bg-black">
 		<BaseHeader/>
 	</div>
 	<main class="form-control flex-1">

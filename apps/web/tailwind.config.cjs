@@ -17,6 +17,8 @@ const config = {
 			topography: heropatterns.topography
 		},
 		colors: {
+			black: '#000000',
+			white: '#ffffff',
 			accentText: '#000000',
 			accent1: 'rgba(55,255,0,0.38)',
 			accent2: 'rgba(0,141,255,0.87)',

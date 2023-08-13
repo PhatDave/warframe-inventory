@@ -33,9 +33,9 @@
 </script>
 
 <template>
-	<div class="select-none border border-indigo-500
+	<div class="select-none border border-indigo-500 h-full
 				{item.built ? 'bg-accent1':''}">
-		<div class="grid grid-cols-2 items-center"
+		<div class="grid grid-cols-2 items-center h-full"
 		     on:contextmenu={doBuild}>
 			<button class="items-center content-center flex flex-col cursor-pointer">
 				<span class="text-center font-bold text-3xl
@@ -44,7 +44,7 @@
 				</span>
 				<img class="w-48 h-48" src={resolveImageName(item.name)} alt={item.name}/>
 			</button>
-			<div class="h-full flex flex-col justify-between">
+			<div class="h-full flex flex-col justify-evenly">
 				{#each parts as part}
 					<PartComp {part} item="{item}"/>
 				{/each}

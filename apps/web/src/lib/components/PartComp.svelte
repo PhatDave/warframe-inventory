@@ -17,6 +17,6 @@
 								{item.built ? 'bg-accent1':''}
 								{part.owned && !item.built ? 'bg-accent2':''}"
 	        on:click={flipOwned}>
-		<span class="text-3xl {item.built || part.owned ? 'text-accentText':''}">{part.name}</span>
+		<span class="text-2xl w-full h-full text-left items-center justify-start flex {item.built || part.owned ? 'text-accentText':''}">{part.name}</span>
 	</button>
 </template>
