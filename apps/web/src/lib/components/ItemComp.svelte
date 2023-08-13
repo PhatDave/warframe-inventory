@@ -34,12 +34,12 @@
 
 <template>
 	<div class="select-none border border-indigo-500
-				{item.built ? 'bg-emerald-900':''}">
+				{item.built ? 'bg-accent1':''}">
 		<div class="grid grid-cols-2 items-center"
 		     on:contextmenu={doBuild}>
 			<button class="items-center content-center flex flex-col cursor-pointer">
 				<span class="text-center font-bold text-3xl
-			        {item.built ? 'text-emerald-500':''}">
+			        {item.built ? 'text-accentText':''}">
 					{item.name}
 				</span>
 				<img class="w-48 h-48" src={resolveImageName(item.name)} alt={item.name}/>

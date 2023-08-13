@@ -14,11 +14,9 @@
 
 <template>
 	<button class="h-full w-full flex items-center cursor-pointer px-3
-								{item.built ? 'bg-emerald-900':''}
-								{part.owned && !item.built ? 'bg-sky-800':''}"
+								{item.built ? 'bg-accent1':''}
+								{part.owned && !item.built ? 'bg-accent2':''}"
 	        on:click={flipOwned}>
-		<span class="text-3xl
-					 {item.built ? 'text-emerald-500':''}
-					 {part.owned && !item.built ? 'text-sky-400':''}">{part.name}</span>
+		<span class="text-3xl {item.built || part.owned ? 'text-accentText':''}">{part.name}</span>
 	</button>
 </template>
