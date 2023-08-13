@@ -5,30 +5,30 @@
     import type {Item} from "$types";
     import {onMount} from "svelte";
     import {get} from "svelte/store";
-    import {getWarframes} from "../api/warframeApi";
+    import {getItems} from "../api/warframeApi";
 
     let searchQuery: string = "";
-    let filteredFrames: Item[] = [];
+    let filteredItems: Item[] = [];
 
     onMount(async () => {
         if (get(initializedStoresState).get("items")) return;
-        const apiFrames = await getWarframes();
+        const apiFrames = await getItems();
         itemsStore.update(items => [...items, ...apiFrames]);
-        filteredFrames = get(itemsStore);
+        filteredItems = get(itemsStore).filter(item => item.type == "Warframe");
         initializedStoresState.update(state => state.set("items", true));
-	});
+    });
 
     $: {
         searchQuery = searchQuery.toLowerCase();
-        filteredFrames = get(itemsStore).filter(frame => frame.name.toLowerCase().includes(searchQuery));
+        filteredItems = get(itemsStore).filter(item => item.type == "Warframe" && item.name.toLowerCase().includes(searchQuery));
     }
 </script>
 
 <template>
 	<input type="text" class="content-center text-5xl" bind:value={searchQuery}>
 	<div class="grid grid-cols-2">
-		{#each filteredFrames as frame}
-			<ItemComp {frame} />
+		{#each filteredItems as item}
+			<ItemComp {item}/>
 		{/each}
 	</div>
 </template>

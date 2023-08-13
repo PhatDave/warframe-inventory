@@ -26,6 +26,7 @@ export type Item = {
     id: string;
     name: string;
     built: boolean;
+    type: string;
 }
 
 export type Part = {

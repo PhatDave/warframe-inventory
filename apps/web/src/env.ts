@@ -14,7 +14,7 @@ export const POST_OPTIONS = {
 
 export const API_URL = "https://pocketbase-warframe-inventory.site.quack-lab.dev/api";
 export const API_ITEMS_URL = `${API_URL}/collections/item/records`;
-export const API_ITEMS_DEFAULT_FILTER = "?fields=id,name,built&sort=+name&perPage=1000";
+export const API_ITEMS_DEFAULT_FILTER = "?fields=id,name,built,type&sort=+name&perPage=1000";
 
 export const API_WARFRAMES_FILTER = "&filter=(type='Warframe')";
 export const API_WEAPONS_FILTER = "&filter=(type='Weapon')";

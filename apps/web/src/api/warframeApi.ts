@@ -1,15 +1,8 @@
 import type {APIResponse, Item, Part} from "$types";
-import {
-    API_ITEMS_DEFAULT_FILTER,
-    API_ITEMS_URL,
-    API_PARTS_DEFAULT_FILTER,
-    API_PARTS_URL,
-    API_WARFRAMES_FILTER,
-    POST_OPTIONS
-} from "../env";
+import {API_ITEMS_DEFAULT_FILTER, API_ITEMS_URL, API_PARTS_DEFAULT_FILTER, API_PARTS_URL, POST_OPTIONS} from "../env";
 
-export async function getWarframes(): Promise<Item[]> {
-    const res = await fetch(`${API_ITEMS_URL}${API_ITEMS_DEFAULT_FILTER}${API_WARFRAMES_FILTER}`);
+export async function getItems(): Promise<Item[]> {
+    const res = await fetch(`${API_ITEMS_URL}${API_ITEMS_DEFAULT_FILTER}`);
     const json: APIResponse = await res.json();
     return json.items as Item[];
 }
