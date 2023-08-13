@@ -1,0 +1,33 @@
+{
+  "name": "pink-remaster",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build"
+  },
+  "dependencies": {
+    "@changesets/cli": "^2.26.2",
+    "@typescript-eslint/eslint-plugin": "^6.3.0",
+    "@typescript-eslint/parser": "^6.3.0",
+    "eslint": "^8.47.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-json": "^3.1.0",
+    "eslint-plugin-svelte3": "^4.0.0",
+    "lint-staged": "^13.2.3",
+    "prettier": "^3.0.1",
+    "prettier-plugin-svelte": "^3.0.3",
+    "prettier-plugin-tailwindcss": "^0.5.2",
+    "turbo": "^1.10.12",
+    "typescript": "^5.1.6"
+  },
+  "lint-staged": {
+    "src/**/*.{js,ts,svelte}": "eslint",
+    "src/**/*.{js,ts,svelte,postcss}": "prettier --write --plugin-search-dir=."
+  },
+  "packageManager": "pnpm@8.5.0",
+  "engineStrict": true,
+  "engines": {
+    "pnpm": ">=8.5.0",
+    "node": ">18.0.0 <19.0.0"
+  }
+}
