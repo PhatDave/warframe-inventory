@@ -1,7 +1,9 @@
 <script lang="ts">
     import PartComp from "$components/PartComp.svelte";
+    import {partsStore} from "$stores/parts";
     import type {Item, Part} from "$types";
     import {onMount} from "svelte";
+    import {get} from "svelte/store";
     import {getParts, updateItem} from "../../api/warframeApi";
 
     export let frame: Item;
@@ -9,8 +11,17 @@
     let parts: Part[] = [];
 
     onMount(async () => {
-		parts = await getParts(frame);
-	});
+        let stateParts = get(partsStore).get(frame.name);
+        if (!stateParts || stateParts.length === 0) {
+            const apiParts = await getParts(frame);
+            partsStore.update((store) => store.set(frame.name, apiParts));
+        }
+        parts = get(partsStore).get(frame.name);
+    });
+
+    $: {
+        console.log(`Parts for frame ${frame.name} are ${JSON.stringify(parts)}`);
+    }
 
     function resolveImageName(warframe: string): string {
         return `/warframes/${warframe.replace(" ", "")}.png.webp`;
