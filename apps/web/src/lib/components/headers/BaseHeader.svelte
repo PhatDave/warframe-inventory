@@ -14,7 +14,7 @@
                 <a href="/"> Warframes </a>
             </li>
             <li>
-                <a href="/items"> Items </a>
+                <a href="/weapons"> Weapons </a>
             </li>
         </ul>
     </nav>
