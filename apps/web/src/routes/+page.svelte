@@ -28,7 +28,7 @@
 	<input type="text" class="content-center text-5xl" bind:value={searchQuery}>
 	<div class="grid grid-cols-2">
 		{#each filteredFrames as frame}
-			<ItemComp frame="{frame}" />
+			<ItemComp {frame} />
 		{/each}
 	</div>
 </template>

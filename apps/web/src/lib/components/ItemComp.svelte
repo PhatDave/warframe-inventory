@@ -24,7 +24,7 @@
     }
 
     function resolveImageName(warframe: string): string {
-        return `/warframes/${warframe.replace(" ", "")}.png.webp`;
+        return `/items/${warframe.replace(" ", "")}.png.webp`;
     }
 
     function doBuild(event: Event) {
@@ -48,7 +48,7 @@
 			</button>
 			<div class="h-full flex flex-col justify-between">
 				{#each parts as part}
-					<PartComp part="{part}" item="{frame}"/>
+					<PartComp {part} item="{frame}"/>
 				{/each}
 			</div>
 		</div>
