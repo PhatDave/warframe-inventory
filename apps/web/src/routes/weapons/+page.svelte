@@ -18,10 +18,9 @@
         initializedStoresState.update(state => state.set("items", true));
     });
 
-    $: {
-        searchQuery = searchQuery.toLowerCase();
-        filteredItems = get(itemsStore).filter(item => item.type == "Weapon" && item.name.toLowerCase().includes(searchQuery));
-    }
+    $: filteredItems = $itemsStore.filter(item =>
+        item.type == "Weapon" && item.name.toLowerCase().includes(searchQuery.toLocaleLowerCase())
+    );
 </script>
 
 <template>
